@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://mariadb:3306/spring_crud # MariaDB 호스트와 포트 설정
+    username: root
+    password: 1234
+    driver-class-name: org.mariadb.jdbc.Driver # MariaDB JDBC 드라이버 클래스
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
