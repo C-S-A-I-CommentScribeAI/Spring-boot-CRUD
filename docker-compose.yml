@@ -1,5 +1,23 @@
-version: '3'
+version: "3"
+
 services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      # :을 기준으로 왼쪽은 빌드 이전의 로컬 폴더 오른쪽은 컨테이너 내부의 폴더
+      - ./frontend/:/frontend
+      - /frontend/node_modules
+    tty: true
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+
   backend:
     build:
       context: ./backend
@@ -33,3 +51,4 @@ services:
       - PMA_PORT=3306
     depends_on:
       - mariadb
+
