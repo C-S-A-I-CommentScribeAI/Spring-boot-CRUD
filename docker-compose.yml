@@ -11,6 +11,7 @@ services:
 
   mariadb:
     image: mariadb
+    container_name: mariadb
     environment:
       - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_DATABASE=spring_crud
@@ -21,10 +22,14 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    platform: linux/amd64
     ports:
       - "8081:80"
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=mariadb
+      - PMA_USER=root
+      - PMA_PASSWORD=1234
+      - PMA_PORT=3306
     depends_on:
       - mariadb
