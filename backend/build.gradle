@@ -31,6 +31,8 @@ configurations {
 
 repositories {
 	mavenCentral()
+	maven { url 'https://ropo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
 }
 
 dependencies {
@@ -42,7 +44,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-maven-plugin:2.6.15'
 	implementation 'org.mariadb.jdbc:mariadb-java-client' // MariaDB JDBC 드라이버 종속성 추가
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter' // MyBatis Spring Boot Starter 추가
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'com.google.guava:guava:32.1.2-jre'
+	implementation 'com.h2database:h2'
 
 }
 
@@ -51,6 +55,9 @@ jar {
 	manifest {
 		attributes 'Main-Class': 'com.example.backend'
 	}
+}
+test {
+	useJUnitPlatform()
 }
 
 tasks.named('test') {
