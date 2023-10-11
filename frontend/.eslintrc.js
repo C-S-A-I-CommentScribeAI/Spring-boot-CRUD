@@ -14,7 +14,8 @@ module.exports = {
       parser: '@typescript-eslint/parser', // TypeScript parser 사용
       extends: [
         'plugin:@typescript-eslint/recommended', // TypeScript 규칙 사용
-        'prettier/@typescript-eslint', // TypeScript와 Prettier 통합
+        // 'prettier/@typescript-eslint', // TypeScript와 Prettier 통합
+        'prettier',
       ],
       parserOptions: {
         ecmaVersion: 12,
