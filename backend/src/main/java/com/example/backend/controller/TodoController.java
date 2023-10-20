@@ -39,7 +39,7 @@ public class TodoController {
             // (2) id를 null로 초기화한다. 생성 당시에는 id가 없어야 하기 때문이다.
             entity.setId(null);
 
-            // (3) 임시 유저 아이디를 설정해준다. 이 부분은 4장 인증과 인가에서 수정할 ㅇ{정이다. 지금은 인증과 인가 기능이 없으므로 한 유저(temporary-user)만 로그인 없이 사용 가능한 애플리케이션인 셈이다.
+            // (3) 임시 유저 아이디를 설정해준다. 이 부분은 4장 인증과 인가에서 수정할 예정이다. 지금은 인증과 인가 기능이 없으므로 한 유저(temporary-user)만 로그인 없이 사용 가능한 애플리케이션인 셈이다.
             entity.setUserId(temporaryUserId);
 
             // (4) 서비스를 이용해 Todo 엔티티를 생성한다.
