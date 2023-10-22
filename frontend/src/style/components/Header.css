@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-icon {
+  margin: 15px;
+}
+
+.btn-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  margin: 10px;
+  font-family: DM Serif Display;
+
+  border: none;
+  background-color: transparent; /* 배경색을 투명색으로 설정 */
+  color: #a9a4a4;
+}
+
+.sign-btn {
+  margin: 10px;
+  font-family: DM Serif Display;
+
+  border: none;
+  background-color: transparent; /* 배경색을 투명색으로 설정 */
+  color: #a9a4a4;
+}
+
+.settings-icon {
+  margin-left: 10px; /* 설정 아이콘과 로그인/회원가입 버튼 사이의 여백 설정 */
+  margin-right: 8.98px;
+
+  cursor: pointer;
+}
