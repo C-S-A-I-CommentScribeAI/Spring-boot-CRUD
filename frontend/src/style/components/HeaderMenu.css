@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-icon {
+  margin: 15px;
+}
+
+.menu-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro,
+.notice,
+.todo,
+.custom {
+  display: inline-block;
+  position: relative;
+  color: #000000;
+  font-family: DM Serif Display;
+
+  padding: 0px 96px 0px 96px;
+  cursor: pointer;
+}
+
+.drop-menu-wrap {
+  position: absolute;
+  list-style: none;
+  background: white;
+
+  padding: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+}
+
+.drop-menu {
+  padding-bottom: 0px;
+  margin: 0 auto;
+
+  width: 95.946px;
+  height: 27.899px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.btn-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  margin: 10px;
+  font-family: DM Serif Display;
+
+  border: none;
+  background-color: transparent; /* 배경색을 투명색으로 설정 */
+  color: #a9a4a4;
+}
+
+.sign-btn {
+  margin: 10px;
+  font-family: DM Serif Display;
+
+  border: none;
+  background-color: transparent; /* 배경색을 투명색으로 설정 */
+  color: #a9a4a4;
+}
+
+.settings-icon {
+  margin-left: 10px; /* 설정 아이콘과 로그인/회원가입 버튼 사이의 여백 설정 */
+  margin-right: 8.98px;
+
+  cursor: pointer;
+}
