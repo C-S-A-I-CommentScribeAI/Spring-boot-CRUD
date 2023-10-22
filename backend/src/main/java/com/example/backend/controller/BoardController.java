@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,8 @@ public class BoardController {
 
     @Autowired
     private BoardService service;
+
+    Date currentTime = new Date();
 
     @PostMapping
     public ResponseEntity<?> createBoard(@RequestBody BoardDTO dto){
@@ -28,6 +31,10 @@ public class BoardController {
 
             // (2) id를 null로 초기화한다. 생성 다시에는 id가 없어야 하기 때문이다.
             entity.setId(null);
+
+            // 현제시간을 저장해 만든날짜와 업데이트날짜를 저장
+            entity.setCreatedAt(currentTime);
+            entity.setUpdatedAt(currentTime);
 
             // (3) 임시 유저 아이디를 설정해준다. 이 부분은 4장 인증과 인가에서 수정할 정정이다. 지금은 인증과 인가 기능이 없으므로 한 유저(temporary-user)만 로그인 없이 사용 가능한 애플리케이션인 셈이다.
             entity.setUserId(temporaryUserId);
