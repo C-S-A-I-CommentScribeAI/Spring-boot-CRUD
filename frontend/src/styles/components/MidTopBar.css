@@ -1,0 +1,129 @@
+/* 페이지 타이틀 스타일 */
+.pageTitle.bg_blue {
+  background: #6b7aff; /* 배경색 설정 */
+}
+
+.pageTitle {
+  padding: 60px 0 0; /* 위 여백 및 아래 여백 설정 */
+  text-align: center; /* 가운데 정렬 */
+}
+
+.pageTitle .title {
+  font-family: 'HGGGothicssi'; /* 폰트 설정 */
+  font-weight: 800; /* 글자 두께 설정 */
+  font-size: 30px; /* 글자 크기 설정 */
+  line-height: 0.9; /* 줄 높이 설정 */
+  color: #fff; /* 글자 색상 설정 */
+}
+
+/* 페이지 탭 스타일 */
+.pageTitle .pageTab {
+  padding-bottom: 20px; /* 아래 여백 설정 */
+}
+
+.tab_ui.type1 .tab_wrap {
+  display: inline-block;
+  max-width: 100%;
+  height: 35px;
+  vertical-align: top;
+  overflow: hidden;
+  padding: 0 20px; /* 좌우 여백 설정 */
+}
+
+.tab_ui.type1 .tab_wrap {
+  height: 100%; /* 높이 설정 */
+}
+
+.tab_ui.type1 .tab {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap; /* 넘치는 텍스트 처리 방법 설정 */
+}
+
+.tab_ui.type1 .tab_inner {
+  display: flex;
+  position: relative;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; /* 가운데 정렬 */
+}
+
+.pageTitle.bg_blue .pageTab .tab a {
+  color: #fff; /* 링크 글자색 설정 */
+  transition: opacity 0.1s; /* 투명도 전환 효과 설정 */
+}
+
+.tab_ui.type1 .tab.active a {
+  color: #fff; /* 활성화된 탭의 글자색 설정 */
+  background: #6b7aff; /* 활성화된 탭의 배경색 설정 */
+  opacity: 1; /* 투명도 설정 */
+}
+
+/* 공통 스타일 설정 */
+div,
+span,
+h2,
+ul,
+li,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Noto Sans KR'; /* 폰트 설정 */
+  letter-spacing: -0.3px; /* 글자 간격 설정 */
+  line-height: normal; /* 줄 높이 설정 */
+  vertical-align: baseline;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+div {
+  display: block; /* 블록 요소로 설정 */
+}
+
+.pageTitle.bg_blue .tit,
+.pageTitle.bg_blue .desc {
+  color: #fff; /* 글자 색상 설정 */
+  font-weight: 400; /* 글자 두께 설정 */
+  font-size: 20px; /* 글자 크기 설정 */
+  line-height: 1.5; /* 줄 높이 설정 */
+  letter-spacing: -0.5px; /* 글자 간격 설정 */
+  margin-top: 25px; /* 위 여백 설정 */
+  padding-bottom: 25px; /* 아래 여백 설정 */
+}
+
+ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none; /* 리스트 스타일 제거 */
+}
+
+.layout1 {
+  padding: 0 20px; /* 좌우 여백 설정 */
+}
+
+.layout1 {
+  position: relative;
+  max-width: 1284px; /* 최대 너비 설정 */
+  min-width: 280px; /* 최소 너비 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
+}
+
+/* 버튼 스타일 */
+.button-style {
+  background-color: #6b7aff; /* 배경색 설정 */
+  color: #ffffff; /* 글자색 설정 */
+  border: none; /* 테두리 제거 */
+  border-radius: 8px; /* 테두리 둥글기 설정 */
+  padding: 10px 20px; /* 내부 여백 설정 */
+  font-size: 16px; /* 글자 크기 설정 */
+  cursor: pointer; /* 포인터 커서 설정 */
+  margin-right: 10px; /* 오른쪽 여백 설정 */
+}
+
+.button-style:hover {
+  background-color: #4a5ff1; /* 마우스 호버 시 배경색 설정 */
+}

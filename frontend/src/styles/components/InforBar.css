@@ -1,0 +1,92 @@
+.mid-top-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 1200px;
+  height: 300px;
+  top: 90px;
+  margin: 0 auto; /* 중앙 정렬을 위해 추가 */
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-51 {
+  width: 472px;
+  height: 76px;
+}
+
+.rectangle-53 {
+  width: 100%;
+  height: 100%;
+  background: #6b7aff;
+}
+
+.button {
+  width: 92px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px; /* 조정 */
+  color: #ffffff;
+  background: #000000;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.faq,
+.one-on-one-inquiry,
+.announcement {
+  width: 100px; /* 너비 조정 */
+  height: 30px; /* 높이 조정 */
+  font-size: 16px;
+  line-height: 30px; /* 조정 */
+  color: #ffffff;
+  position: absolute;
+  top: 220px;
+}
+
+.faq {
+  left: calc(35% - 50px); /* 가운데 정렬을 위해 수정 */
+}
+
+.one-on-one-inquiry {
+  left: 46%; /* 가운데 정렬을 위해 수정 */
+  transform: translateX(-50%); /* 가운데 정렬을 위해 수정 */
+}
+
+.customer-center {
+  width: 220px;
+  height: 28px;
+  font-size: 27px;
+  line-height: 28px; /* 조정 */
+  color: #ffffff;
+  position: absolute;
+  top: 100px; /* 조정 */
+  left: 50%; /* 가운데 정렬을 위해 수정 */
+  transform: translateX(-50%); /* 가운데 정렬을 위해 수정 */
+}
+.cisa-question {
+  width: 220px;
+  height: 28px;
+  font-size: 27px;
+  line-height: 28px; /* 조정 */
+  color: #ffffff;
+  position: absolute;
+  top: 140px; /* 조정 */
+  left: 46.5%; /* 가운데 정렬을 위해 수정 */
+  transform: translateX(-50%); /* 가운데 정렬을 위해 수정 */
+}
+
+.cisa-question {
+  font-size: 16px;
+  line-height: 25px;
+}
