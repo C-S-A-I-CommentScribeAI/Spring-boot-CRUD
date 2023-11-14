@@ -11,7 +11,7 @@ module.exports = {
   overrides: [
     {
       files: ['*.ts', '*.tsx'], // TypeScript 파일 확장자 추가
-      parser: ['babel-parser', '@typescript-eslint/parser'], // TypeScript parser 사용
+      parser: '@typescript-eslint/parser', // TypeScript parser 사용
       extends: [
         'plugin:@typescript-eslint/recommended', // TypeScript 규칙 사용
         // 'prettier/@typescript-eslint', // TypeScript와 Prettier 통합

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/components/HeaderMenu.css';
+import '../styles/components/HeaderMenu.css';
 import logo from '../assets/images/logo.png';
 import set from '../assets/images/settings.png';
 
