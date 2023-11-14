@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React from 'react';
 import Router from './Router';
-import GlobalStyle from './style/Globalstyle';
+import GlobalStyle from './styles/Globalstyle';
 import './App.css';
 
 function App() {

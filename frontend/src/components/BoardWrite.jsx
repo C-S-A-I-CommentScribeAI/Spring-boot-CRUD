@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
-import '../style/components/BoardWrite.css';
+import '../styles/components/BoardWrite.css';
 
 function BoardWrite() {
   /* const navigate = useNavigate();
