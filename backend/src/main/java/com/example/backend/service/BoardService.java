@@ -48,6 +48,24 @@ public class BoardService {
         return  retrieve(entity.getUserId());
     }
 
+    public List<BoardEntity> delete(final BoardEntity entity) {
+        // (1) 저장할 엔티티가 유효한지 확인하다. 이 메서드는 2.3.1 Create Todo에서 구현했다.
+        validate(entity);
+
+        try {
+            // (2) 엔티티를 삭제한다.
+            repository.delete(entity);
+        }catch (Exception e) {
+            // (3) exception 발생 시 id 와 exception을 로깅한다.
+            log.error("error deleting entity ", entity.getId(),e);
+
+            // (4) 컴트롤러로 exception을 날린다. 데이터베이스 내부 로직을 캡슐화하기 위해 e를 리천하지 않고 새 exception 오브젝트를 리턴한다.
+            throw new RuntimeException("error deleting entity " + entity.getId());
+        }
+        // (5) 새 Board 리스트를 가져와 리턴한다.
+        return retrieve(entity.getUserId());
+    }
+
     private  void validate(final BoardEntity entity){
         if(entity == null){
             log.warn("Entity cannot be null.");

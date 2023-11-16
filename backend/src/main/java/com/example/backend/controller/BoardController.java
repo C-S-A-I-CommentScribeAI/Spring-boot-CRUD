@@ -99,4 +99,34 @@ public class BoardController {
         // (6) ResposneDTO를 리턴한다.
         return ResponseEntity.ok().body(response);
     }
+
+    @DeleteMapping
+    public ResponseEntity<?> deleteBoard(@RequestBody BoardDTO dto) {
+        try {
+            String temporaryUserId = "temporary-user"; // temporary user id.
+
+            // (1) dto를 entity로 변환한다.
+            BoardEntity entity = BoardDTO.toEntity(dto);
+
+            // (2) id를 temporaryUserId로 초기화한다. 여기는 4장 인증과 인가에서 수정할 예정이다.
+            entity.setUserId(temporaryUserId);
+
+            // (3) 서비스를 이용해 entity를 삭제한다.
+            List<BoardEntity> entities = service.delete(entity);
+
+            // (4) 자바 스트림을 이용해 리턴된 엔티티 리스트를 BoardDTO 리스트로 변환한다.
+            List<BoardDTO> dtos = entities.stream().map(BoardDTO::new).collect(Collectors.toList());
+
+            // (5) 변환된 BoardDTO 리스트를 이용해 ResposneDTO를 초기화한다.
+            ResponseDTO<BoardDTO> response = ResponseDTO.<BoardDTO>builder().data(dtos).build();
+
+            // (6) ResposneDTO를 리턴한다.
+            return ResponseEntity.ok().body(response);
+        } catch (Exception e) {
+            // (8) 혹시 예외가 나는 경우 dto 대신 error에 메세지를 넣어 리턴한다.
+            String error = e.getMessage();
+            ResponseDTO<BoardDTO> response = ResponseDTO.<BoardDTO>builder().error(error).build();
+            return ResponseEntity.badRequest().body(response);
+        }
+    }
 }
