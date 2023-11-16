@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
 
 @Builder //쉽게 오브젝트를 생성하게 해줌
 @NoArgsConstructor //안에 아무것도 없는 생성자를 만들어줌
