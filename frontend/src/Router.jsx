@@ -1,20 +1,20 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import MainPage from './page/MainPage';
-import IntroPage from './page/IntroPage';
-import LoginPage from './page/LoginPage';
-import SignUpPage from './page/SignUpPage';
-import InformationPage from './page/InformationPage';
-import InformationWrite from './page/InformationWrite';
-import FreePage from './page/FreePage';
-import FreeWrite from './page/FreeWrite';
-import ServicePage from './page/ServicePage';
-import ServiceWrite from './page/ServieWrite';
-import AskPage from './page/AskPage';
-import AskWrite from './page/AskWrite';
-import NoticePage from './page/NoticePage';
-import NoticeWrite from './page/NoticeWrite';
-import TodoPage from './page/TodoPage';
+import MainPage from './pages/MainPage';
+import IntroPage from './pages/IntroPage';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import InformationPage from './pages/InformationPage';
+import InformationWrite from './pages/InformationWrite';
+import FreePage from './pages/FreePage';
+import FreeWrite from './pages/FreeWrite';
+import ServicePage from './pages/ServicePage';
+import ServiceWrite from './pages/ServieWrite';
+import AskPage from './pages/AskPage';
+import AskWrite from './pages/AskWrite';
+import NoticePage from './pages/NoticePage';
+import NoticeWrite from './pages/NoticeWrite';
+import TodoPage from './pages/TodoPage';
 
 function Router() {
   return (

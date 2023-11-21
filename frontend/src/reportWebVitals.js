@@ -1,6 +1,6 @@
 function reportWebVitals(onPerfEntry) {
   if (onPerfEntry && typeof onPerfEntry === 'function') {
-    require.ensure(['web-vitals'], function (require) {
+    require.ensure(['web-vitals'], function loadWebVitals(require) {
       const vitals = require('web-vitals');
       vitals.getCLS(onPerfEntry);
       vitals.getFID(onPerfEntry);
