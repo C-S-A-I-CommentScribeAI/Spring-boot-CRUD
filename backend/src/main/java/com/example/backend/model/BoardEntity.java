@@ -10,6 +10,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Builder
 @NoArgsConstructor
@@ -36,4 +37,7 @@ public class BoardEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date deletedAt;
+
+    @OneToMany(mappedBy = "board", fetch = FetchType.LAZY)
+    private List<CommentEntity> comments;
 }

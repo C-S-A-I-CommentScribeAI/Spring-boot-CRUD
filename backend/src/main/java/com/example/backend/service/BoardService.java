@@ -16,7 +16,7 @@ public class BoardService {
     @Autowired
     private BoardRepository repository;
 
-    public List<BoardEntity> creat(final BoardEntity entity){
+    public BoardEntity creat(final BoardEntity entity){
         // Validations
         validate(entity);
 
@@ -24,14 +24,14 @@ public class BoardService {
 
         log.info("Entity Id : {} is saved.", entity.getId());
 
-        return repository.findByUserId(entity.getUserId());
+        return entity;
     }
 
-    public List<BoardEntity> update(final BoardEntity entity) {
-        // (1) 저장할 엔티티가 유효한지 확인한다. 이 메서드는 2.3.1 Create Todo에서 구현했다.
+    public BoardEntity update(final BoardEntity entity) {
+        // (1) 저장할 엔티티가 유효한지 확인한다.
         validate(entity);
 
-        // (2) 넘겨받은 엔티티 id를 이용해 BoardEntity를 가져온다. 존재하지 않는 엔티티는 업데이트 할 수 없기 때문이다.
+        // (2) 넘겨받은 엔티티 id를 이용해 BoardEntity를 가져온다.
         final Optional<BoardEntity> original = repository.findById(entity.getId());
 
         if(original.isPresent()) {
@@ -40,12 +40,12 @@ public class BoardService {
             board.setTitle(entity.getTitle());
             board.setContent(entity.getContent());
 
-            // (4) 데이터베이스에 새 값을 저장한다.
-            repository.save(board);
+            // (4) 데이터베이스에 새 값을 저장하고 리턴한다.
+            return repository.save(board);
+        } else {
+            // (5) 존재하지 않는 엔티티는 업데이트할 수 없기 때문에 exception을 발생시킨다.
+            throw new RuntimeException("Entity with id " + entity.getId() + " does not exist");
         }
-
-        // 2.3.2 Retrieve Board에서 만든 메서드를 이용해 유저의 모든 Board 리스트를 리턴한다.
-        return  retrieve(entity.getUserId());
     }
 
     public List<BoardEntity> delete(final BoardEntity entity) {
@@ -63,10 +63,10 @@ public class BoardService {
             throw new RuntimeException("error deleting entity " + entity.getId());
         }
         // (5) 새 Board 리스트를 가져와 리턴한다.
-        return retrieve(entity.getUserId());
+        return retrieveAll();
     }
 
-    private  void validate(final BoardEntity entity){
+    private void validate(final BoardEntity entity){
         if(entity == null){
             log.warn("Entity cannot be null.");
             throw new RuntimeException("Entity cannot be null.");
@@ -82,8 +82,8 @@ public class BoardService {
 
     public List<BoardEntity> retrieveAll() { return repository.findAll(); }
 
-    public BoardEntity getBoardById(String id) {
-        return repository.findById(id)
+    public BoardEntity getBoardById(String boardId) {
+        return repository.findById(boardId)
                 .orElseThrow(() -> new RuntimeException("Board not found"));
     }
 }

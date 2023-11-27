@@ -1,9 +1,7 @@
 package com.example.backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +20,13 @@ public class CommentEntity {
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
     private String userId;
-    private String boardId;
     private String content;
+
+    @ManyToOne
+    @JoinColumn(name = "boardId")
+    private BoardEntity board;
+
+    public String getBoardId() {
+        return board != null ? board.getId() : null;
+    }
 }
