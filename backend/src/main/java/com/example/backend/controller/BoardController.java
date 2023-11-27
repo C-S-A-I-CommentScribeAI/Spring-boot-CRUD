@@ -4,6 +4,7 @@ import com.example.backend.dto.BoardDTO;
 import com.example.backend.dto.ResponseDTO;
 import com.example.backend.model.BoardEntity;
 import com.example.backend.service.BoardService;
+import java.util.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -62,10 +63,8 @@ public class BoardController {
 
     @GetMapping
     public ResponseEntity<?> retrieveBoardList() {
-        String tmporaryUserId = "temporary-user"; // temporary user id
-
         // (1) 서비스 메서드의 retrieve 메서드를 사용해 Board 리스트를 가져온다
-        List<BoardEntity> entities = service.retrieve(tmporaryUserId);
+        List<BoardEntity> entities = service.retrieveAll();
 
         // (2) 자바 스트림을 이용해 리턴된 엔티티 리스트를 BoardDTO 리스트로 변환한다.
         List<BoardDTO> dtos = entities.stream().map(BoardDTO::new).collect(Collectors.toList());
@@ -124,6 +123,26 @@ public class BoardController {
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {
             // (8) 혹시 예외가 나는 경우 dto 대신 error에 메세지를 넣어 리턴한다.
+            String error = e.getMessage();
+            ResponseDTO<BoardDTO> response = ResponseDTO.<BoardDTO>builder().error(error).build();
+            return ResponseEntity.badRequest().body(response);
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getBoardDetail(@PathVariable String id) {
+        try {
+            BoardEntity entity = service.getBoardById(id);
+            BoardDTO dto = new BoardDTO(entity);
+
+            // BoardDTO 객체를 리스트에 담는다.
+            List<BoardDTO> dtoList = Collections.singletonList(dto);
+
+            ResponseDTO<BoardDTO> response = ResponseDTO.<BoardDTO>builder()
+                    .data(dtoList) // BoardDTO 리스트를 data 메서드에 전달
+                    .build();
+            return ResponseEntity.ok().body(response);
+        } catch (Exception e) {
             String error = e.getMessage();
             ResponseDTO<BoardDTO> response = ResponseDTO.<BoardDTO>builder().error(error).build();
             return ResponseEntity.badRequest().body(response);

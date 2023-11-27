@@ -14,6 +14,7 @@ import java.util.Date;
 @Data
 public class BoardDTO {
     private String id;
+    private String userId;
     private String title;
     private String content;
     private Date createdAt;
@@ -21,6 +22,7 @@ public class BoardDTO {
 
     public BoardDTO(final BoardEntity entity){
         this.id = entity.getId();
+        this.userId = entity.getUserId();
         this.title = entity.getTitle();
         this.content = entity.getContent();
         this.createdAt = entity.getCreatedAt();
@@ -30,6 +32,7 @@ public class BoardDTO {
     public static BoardEntity toEntity(final BoardDTO dto){
         return BoardEntity.builder()
                 .id(dto.getId())
+                .userId(dto.getUserId())
                 .title(dto.getTitle())
                 .content(dto.getContent())
                 .build();

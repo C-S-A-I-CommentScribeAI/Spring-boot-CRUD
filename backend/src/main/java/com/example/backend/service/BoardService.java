@@ -79,4 +79,11 @@ public class BoardService {
     }
 
     public List<BoardEntity> retrieve(final String userId) { return repository.findByUserId(userId); }
+
+    public List<BoardEntity> retrieveAll() { return repository.findAll(); }
+
+    public BoardEntity getBoardById(String id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Board not found"));
+    }
 }
