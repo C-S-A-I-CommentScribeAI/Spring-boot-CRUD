@@ -3,8 +3,11 @@ package com.example.backend.controller;
 import com.example.backend.dto.BoardDTO;
 import com.example.backend.dto.ResponseDTO;
 import com.example.backend.model.BoardEntity;
+import com.example.backend.model.CommentEntity;
 import com.example.backend.service.BoardService;
 import java.util.Collections;
+
+import com.example.backend.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +21,9 @@ import java.util.stream.Collectors;
 public class BoardController {
 
     @Autowired
-    private BoardService service;
+    private BoardService boardService;
+    @Autowired
+    private CommentService commentService;
 
     Date currentTime = new Date();
 
@@ -41,7 +46,7 @@ public class BoardController {
             entity.setUserId(temporaryUserId);
 
             // (4) 서비스를 이용해 Board 엔티티를 생성하고, 결과를 받는다.
-            BoardEntity createdEntity = service.creat(entity);
+            BoardEntity createdEntity = boardService.creat(entity);
 
             // (5) 생성된 엔티티를 BoardDTO로 변환한다.
             BoardDTO createdDto = new BoardDTO(createdEntity);
@@ -63,7 +68,7 @@ public class BoardController {
     @GetMapping
     public ResponseEntity<?> retrieveBoardList() {
         // (1) 서비스 메서드의 retrieve 메서드를 사용해 Board 리스트를 가져온다
-        List<BoardEntity> entities = service.retrieveAll();
+        List<BoardEntity> entities = boardService.retrieveAll();
 
         // (2) 자바 스트림을 이용해 리턴된 엔티티 리스트를 BoardDTO 리스트로 변환한다.
         List<BoardDTO> dtos = entities.stream().map(BoardDTO::new).collect(Collectors.toList());
@@ -86,7 +91,7 @@ public class BoardController {
         entity.setUserId(temporaryUserId);
 
         // (3) 서비스를 이용해 entity를 업데이트한다.
-        BoardEntity updatedEntity = service.update(entity);
+        BoardEntity updatedEntity = boardService.update(entity);
 
         // (4) 업데이트된 엔티티를 BoardDTO로 변환한다.
         BoardDTO updatedDto = new BoardDTO(updatedEntity);
@@ -110,7 +115,7 @@ public class BoardController {
             entity.setUserId(temporaryUserId);
 
             // (3) 서비스를 이용해 entity를 삭제한다.
-            List<BoardEntity> entities = service.delete(entity);
+            List<BoardEntity> entities = boardService.delete(entity);
 
             // (4) 자바 스트림을 이용해 리턴된 엔티티 리스트를 BoardDTO 리스트로 변환한다.
             List<BoardDTO> dtos = entities.stream().map(BoardDTO::new).collect(Collectors.toList());
@@ -131,14 +136,15 @@ public class BoardController {
     @GetMapping("/{boardId}")
     public ResponseEntity<?> getBoardDetail(@PathVariable String boardId) {
         try {
-            BoardEntity entity = service.getBoardById(boardId);
+            BoardEntity entity = boardService.getBoardById(boardId);
             BoardDTO dto = new BoardDTO(entity);
+            List<CommentEntity> commentEntities = commentService.retrieveByBoardId(boardId);
+            dto.setComments(commentEntities); // BoardDTO 객체에 CommentEntity 리스트를 저장한다.
 
             // BoardDTO 객체를 리스트에 담는다.
-            List<BoardDTO> dtoList = Collections.singletonList(dto);
 
             ResponseDTO<BoardDTO> response = ResponseDTO.<BoardDTO>builder()
-                    .data(dtoList) // BoardDTO 리스트를 data 메서드에 전달
+                    .data((List<BoardDTO>) dto) // BoardDTO 리스트를 data 메서드에 전달
                     .build();
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {

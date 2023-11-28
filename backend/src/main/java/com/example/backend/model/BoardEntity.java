@@ -37,7 +37,4 @@ public class BoardEntity {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date deletedAt;
-
-    @OneToMany(mappedBy = "board", fetch = FetchType.LAZY)
-    private List<CommentEntity> comments;
 }

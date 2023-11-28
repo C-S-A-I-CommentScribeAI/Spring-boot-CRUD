@@ -29,7 +29,6 @@ public class BoardDTO {
         this.userId = entity.getUserId();
         this.title = entity.getTitle();
         this.content = entity.getContent();
-        this.comments = entity.getComments();
         this.createdAt = entity.getCreatedAt();
         this.updatedAt = entity.getUpdatedAt();
     }
@@ -40,7 +39,6 @@ public class BoardDTO {
                 .userId(dto.getUserId())
                 .title(dto.getTitle())
                 .content(dto.getContent())
-                .comments(dto.getComments())
                 .build();
     }
 }
