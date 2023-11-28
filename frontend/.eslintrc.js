@@ -34,6 +34,13 @@ module.exports = {
         'import/no-unresolved': 'off',
         'react/prop-types': 'off',
       },
+      settings: {
+        'import/resolver': {
+          node: {
+            paths: ['src'],
+          },
+        },
+      },
     },
   ],
 };
