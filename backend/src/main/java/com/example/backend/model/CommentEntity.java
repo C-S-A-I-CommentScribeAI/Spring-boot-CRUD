@@ -22,11 +22,6 @@ public class CommentEntity {
     private String userId;
     private String content;
 
-    @ManyToOne
     @JoinColumn(name = "boardId")
-    private BoardEntity board;
-
-    public String getBoardId() {
-        return board != null ? board.getId() : null;
-    }
+    private String boardId; // 게시판 ID를 직접 저장
 }

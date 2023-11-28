@@ -28,6 +28,7 @@ public class CommentService {
         // 해당 게시판에 있는 모든 댓글을 반환
         return repository.findByBoardId(entity.getBoardId());
     }
+
     public List<CommentEntity> update(final CommentEntity entity){
         // (1) 저장할 엔티티가 유효한지 확인한다. 이 메서드는 2.3.1 Create Todo에서 구현했다.
         validate(entity);
@@ -77,5 +78,9 @@ public class CommentService {
 
     public List<CommentEntity> retrieve(final String userId) {
         return repository.findByUserId(userId);
+    }
+
+    public List<CommentEntity> retrieveByBoardId(final String boardId) {
+        return repository.findByBoardId(boardId);
     }
 }

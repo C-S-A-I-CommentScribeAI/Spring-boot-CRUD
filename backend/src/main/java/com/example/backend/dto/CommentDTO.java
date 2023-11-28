@@ -1,5 +1,6 @@
 package com.example.backend.dto;
 
+import com.example.backend.model.CommentEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,15 +16,16 @@ public class CommentDTO {
     private String boardId;
     private String content;
 
-    public CommentDTO(final CommentDTO dto){
-        this.id = dto.getId();
-        this.userId = dto.getUserId();
-        this.boardId = dto.getBoardId();
-        this.content = dto.getContent();
+    public CommentDTO(final CommentEntity entity){
+        this.id = entity.getId();
+        this.userId = entity.getUserId();
+        this.boardId = entity.getBoardId();
+        this.content = entity.getContent();
     }
 
-    public static CommentDTO toEntity(final CommentDTO dto){
-        return CommentDTO.builder()
+
+    public static CommentEntity toEntity(final CommentDTO dto){
+        return CommentEntity.builder()
                 .id(dto.getId())
                 .userId(dto.getUserId())
                 .boardId(dto.getBoardId())
