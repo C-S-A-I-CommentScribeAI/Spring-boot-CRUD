@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  border: 3px solid black;
+}
+
+.logo-icon {
+  margin-bottom: 17px; /* 로고 위쪽 마진을 추가하여 로고를 아래로 내립니다. */
+  display: flex; /* 로고 아이콘을 수평 정렬하기 위해 flex 컨테이너로 설정합니다. */
+  justify-content: space-between; /* 로고와 다른 요소 사이에 여백을 추가합니다. */
+  font-size: 15px;
+}
+
+.text-wrap {
+  vertical-align: top;
+  display: flex;
+  flex-direction: column; /* 수직으로 배열하도록 설정합니다. */
+  align-items: center; /* 수직 정렬을 위해 중앙 정렬합니다. */
+}
+
+.up,
+.down {
+  display: flex;
+  font-size: 12px;
+  line-height: 21px;
+  color: #878e98;
+  letter-spacing: -0.3px;
+  text-align: center;
+  margin-right: 10px;
+  white-space: nowrap;
+  margin-bottom: 7px; /* 각각의 엘리먼트 사이에 간격을 추가합니다. */
+}
+
+.footer-item {
+  display: inline-block;
+  margin-right: 20px; /* 각 항목 사이 간격 조절 */
+  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+}
+
+.social-wrap {
+  margin-top: 15px; /* 로고 위쪽 마진을 추가하여 로고를 아래로 내립니다. */
+  display: flex; /* 로고 아이콘을 수평 정렬하기 위해 flex 컨테이너로 설정합니다. */
+  justify-content: space-between; /* 로고와 다른 요소 사이에 여백을 추가합니다. */
+}
