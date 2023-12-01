@@ -1,6 +1,6 @@
 import React from 'react';
-import '../style/components/FootBar.css';
-import footBarLogo from '../assets/images/footBarLogo.png';
+import '../styles/components/FootBar.css';
+import logo from '../assets/images/CSAILogo.png';
 import gitLogo from '../assets/images/gitLogo.png';
 import notionLogo from '../assets/images/notionLogo.png';
 
@@ -18,14 +18,14 @@ function FootBar() {
             <div className="footer-item">개인정보처리방침</div>
           </div>
           <div className="down">
-            <div className="footer-item">주식회사 CISA</div>
+            <div className="footer-item">주식회사 CSAI</div>
             <div className="footer-item">서울시 강남구 테헤란로 32길 23</div>
             <div className="footer-item">고객센터 1234-1234</div>
           </div>
         </div>
         <div className="social-wrap">
-          <img src={gitLogo} alt="gitLogo" className="logo-icon" />
-          <img src={notionLogo} alt="notionLogo" className="logo-icon" />
+          <img src={gitLogo} alt="gitLogo" className="social-icon" />
+          <img src={notionLogo} alt="notionLogo" className="social-icon" />
         </div>
       </div>
     </div>

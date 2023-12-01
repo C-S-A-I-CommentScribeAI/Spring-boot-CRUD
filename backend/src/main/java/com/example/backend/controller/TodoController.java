@@ -39,7 +39,7 @@ public class TodoController {
             // (2) id를 null로 초기화한다. 생성 당시에는 id가 없어야 하기 때문이다.
             entity.setId(null);
 
-            // (3) 임시 유저 아이디를 설정해준다. 이 부분은 4장 인증과 인가에서 수정할 예정이다. 지금은 인증과 인가 기능이 없으므로 한 유저(temporary-user)만 로그인 없이 사용 가능한 애플리케이션인 셈이다.
+            // (3) 임시 유저 아이디를 설정해준다. 이 부분은 4장 인증과 인가에서 수정할 ㅇ{정이다. 지금은 인증과 인가 기능이 없으므로 한 유저(temporary-user)만 로그인 없이 사용 가능한 애플리케이션인 셈이다.
             entity.setUserId(temporaryUserId);
 
             // (4) 서비스를 이용해 Todo 엔티티를 생성한다.
@@ -64,10 +64,10 @@ public class TodoController {
 
     @GetMapping
     public ResponseEntity<?> retrieveTodoList() {
-        String temporaryUserId = "temporary-user"; // temporary user id
+        String tmporaryUserId = "temporary-user"; // temporary user id
 
         // (1) 서비스 메서드의 retrieve 메서드를 사용해 Todo 리스트를 가져온다
-        List<TodoEntity> entities = service.retrieve(temporaryUserId);
+        List<TodoEntity> entities = service.retrieve(tmporaryUserId);
 
         // (2) 자바 스트림을 이용해 리턴된 엔티티 리스트를 TodoDTO 리스트로 변환한다.
         List<TodoDTO> dtos = entities.stream().map(TodoDTO::new).collect(Collectors.toList());

@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,6 +59,23 @@ public class TodoService {
         return retrieve(entity.getUserId());
     }
 
+    //리펙토링한 메서드
+    private void validate(final TodoEntity entity){
+        if(entity == null){
+            log.warn("Entity cannot be null.");
+            throw new RuntimeException(("Entity cannot be null."));
+        }
+
+        if(entity.getUserId() == null){
+            log.warn("Unknown user.");
+            throw new RuntimeException("Unknown user.");
+        }
+    }
+
+    public List<TodoEntity> retrieve(final String userId){
+        return repository.findByUserId(userId);
+    }
+
     public List<TodoEntity> delete(final TodoEntity entity) {
         // (1) 저장할 엔티티가 유효한지 확인하다. 이 메서드는 2.3.1 Create Todo에서 구현했다.
         validate(entity);
@@ -74,22 +92,5 @@ public class TodoService {
         }
         // (5) 새 Todo 리스트를 가져와 리턴한다.
         return retrieve(entity.getUserId());
-    }
-
-    //리펙토링한 메서드
-    private void validate(final TodoEntity entity){
-        if(entity == null){
-            log.warn("Entity cannot be null.");
-            throw new RuntimeException("Entity cannot be null.");
-        }
-
-        if(entity.getUserId() == null){
-            log.warn("Unknown user.");
-            throw new RuntimeException("Unknown user.");
-        }
-    }
-
-    public List<TodoEntity> retrieve(final String userId){
-        return repository.findByUserId(userId);
     }
 }

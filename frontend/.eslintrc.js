@@ -41,6 +41,13 @@ module.exports = {
         semi: 'off',
         '@typescript-eslint/semi': ['error'],
       },
+      settings: {
+        'import/resolver': {
+          node: {
+            paths: ['src'],
+          },
+        },
+      },
     },
   ],
 };
