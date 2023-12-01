@@ -22,7 +22,12 @@ module.exports = {
         sourceType: 'module',
       },
       rules: {
-        'prettier/prettier': 'error',
+        'prettier/prettier': [
+          'error',
+          {
+            endOfLine: 'auto',
+          },
+        ],
         'react/react-in-jsx-scope': 'off',
         'react/jsx-filename-extension': [
           2,
@@ -33,6 +38,8 @@ module.exports = {
         'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
         'import/no-unresolved': 'off',
         'react/prop-types': 'off',
+        semi: 'off',
+        '@typescript-eslint/semi': ['error'],
       },
       settings: {
         'import/resolver': {
