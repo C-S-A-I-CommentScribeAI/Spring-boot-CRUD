@@ -14,6 +14,10 @@
     transform: translateX(-50px);
   }
 
+  @media screen and (max-width: 1000px) {
+    transform: translateX(137px);
+  }
+
   @media screen and (max-width: 655px) {
     transform: translateX(13px);
   }
@@ -60,7 +64,7 @@
   white-space: nowrap;
   margin-bottom: 7px; /* 각각의 엘리먼트 사이에 간격을 추가합니다. */
 
-  @media screen and (max-width: 655px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
 }
@@ -84,7 +88,7 @@
   justify-content: space-between; /* 로고와 다른 요소 사이에 여백을 추가합니다. */
   font-size: 15px;
 
-  @media screen and (max-width: 655px) {
+  @media screen and (max-width: 1000px) {
     transform: translateX(7px);
   }
 }
