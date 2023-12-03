@@ -1,21 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/components/FreePosts.css';
 import { useLocation } from 'react-router-dom';
 import parser from 'html-react-parser';
+import '../styles/components/InforPosts.css';
 
-function FreePosts({ info }) {
+function InforPosts({ inforInfo }) {
   const location = useLocation();
   const { viewContent } = location.state || {};
 
-  FreePosts.propTypes = {
-    // "missing in props validation" 오류 해결법
-    info: PropTypes.string.isRequired, // string 타입으로 설정함. 실제 타입에 맞게 설정해주세요.
-  };
-
   return (
     <div>
-      <div className="freeboard-wrap">
+      <div className="inforboard-wrap">
         {viewContent && viewContent.length > 0 ? (
           viewContent.map((content) => (
             <div className="post" key={content.id}>
@@ -39,9 +34,9 @@ function FreePosts({ info }) {
         )}
       </div>
 
-      <div className="freeboard-wrap">
-        {info !== undefined ? (
-          info.map((naeyong) => (
+      <div className="inforboard-wrap">
+        {inforInfo !== undefined ? (
+          inforInfo.map((naeyong) => (
             <div className="post" key={naeyong.id}>
               <div className="row">
                 <span className="number">{naeyong.id}</span>
@@ -60,4 +55,8 @@ function FreePosts({ info }) {
   );
 }
 
-export default FreePosts;
+InforPosts.propTypes = {
+  inforInfo: PropTypes.string.isRequired,
+};
+
+export default InforPosts;

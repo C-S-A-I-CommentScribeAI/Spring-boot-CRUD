@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import InforBar from '../components/InforBar';
 import SearchBar from '../components/SearchBar';
 import FreePosts from '../components/FreePosts';
-import PostNation from '../components/PostNation';
+import FreePostination from '../components/FreePostination';
 import FootBar from '../components/FootBar';
 
 function FreePage() {
@@ -44,7 +44,7 @@ function FreePage() {
             <SearchBar />
           </div>
           <FreePosts info={currentItems} />
-          <PostNation
+          <FreePostination
             itemsPerPage={itemsPerPage}
             totalItems={freeContent.length}
             paginate={paginate}
