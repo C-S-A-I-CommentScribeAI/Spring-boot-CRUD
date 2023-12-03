@@ -21,7 +21,7 @@
 }
 
 .customer-center {
-  width: 83px;
+  width: 500px;
   height: 25px;
 
   font-size: 27px;
@@ -31,6 +31,10 @@
   position: absolute;
   text-align: center; /* 텍스트 게시물을 중앙으로 정렬 */
   margin: 19px 0px 97px 0px;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 25px;
+  }
 }
 
 .cisa-question {
@@ -44,6 +48,10 @@
   position: absolute;
   text-align: center; /* 텍스트 게시물을 중앙으로 정렬 */
   margin: 44px 0px 67px 0px;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 15px;
+  }
 }
 
 .frame {
@@ -56,6 +64,10 @@
 .move-page {
   display: flex;
   text-align: center;
+
+  @media screen and (max-width: 1190px) {
+    transform: translateX(1.25rem);
+  }
 }
 
 .free,
@@ -76,6 +88,10 @@
     align-items: center;
     flex-direction: row;
   }
+
+  @media screen and (max-width: 1000px) {
+    font-size: 15px;
+  }
 }
 
 .free {
@@ -90,7 +106,13 @@
   }
 }
 
-.free:hover,
+.free:hover {
+  background-color: white;
+  color: black;
+
+  border-radius: 20px;
+}
+
 .information:hover {
   background-color: white;
   color: black;
