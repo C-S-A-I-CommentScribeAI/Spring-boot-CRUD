@@ -10,13 +10,15 @@ function InforBar() {
 
       <div className="move-page">
         <Link to="/freewrite">
-          <div className="free">자유게시판</div>
+          <button className="free" type="button">
+            자유게시판
+          </button>
         </Link>
 
         <Link to="/information">
-          <div className="information" type="button">
+          <button className="information" type="button">
             정보게시판
-          </div>
+          </button>
         </Link>
       </div>
     </div>

@@ -79,30 +79,36 @@
 }
 
 .free {
+  width: 94px;
+  height: 33px;
   margin: 95px 40px 19px 479px;
+  background: transparent;
+  border: none;
 
   @media screen and (max-width: 1190px) {
     margin: 95px 42px 19px 0px;
   }
 }
 
-.free:hover {
+.free:hover,
+.information:hover {
   background-color: white;
   color: black;
+
+  border-radius: 20px;
 }
 
 .information {
+  width: 94px;
+  height: 33px;
   margin: 95px 479px 19px 4px;
+  background: transparent;
+  border: none;
 
   @media screen and (max-width: 1190px) {
     margin: 95px 0px 19px 42px;
     transform: translateX(-40px);
   }
-}
-
-.information:hover {
-  background-color: blue;
-  color: pink;
 }
 
 /* .faq,
