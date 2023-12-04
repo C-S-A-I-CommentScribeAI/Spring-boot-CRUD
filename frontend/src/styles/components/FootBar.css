@@ -1,33 +1,29 @@
 .footbar-container {
   display: flex;
-  justify-content: space-between; /* 컴포넌트들이 양 끝까지 이동 */
+  justify-content: space-between; /* 컴포넌트들이 양 끝까지 이동한다 */
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* 요소들이 화면 크기에 따라 다음 줄로 넘어가도록 설정한다 */
   width: 90rem;
 
   position: fixed;
   bottom: 0;
 
-  border: 3px solid black;
+  @media screen and (max-width: 1440px) {
+    width: 100%; /* 사이즈가 줄여나가면서 줄여나간 사이즈만큼 가로도 변한다*/
+    justify-content: space-between; /* 요소들이 가운데에 위치하도록 설정한다 */
+  }
 
-  @media screen and (max-width: 1000px) {
-    display: flex;
+  @media screen and (max-width: 650px) {
+    width: 100%;
     flex-direction: column;
-    align-items: center;
-    transform: translateX(-50px);
-  }
-
-  @media screen and (max-width: 1000px) {
-    transform: translateX(137px);
-  }
-
-  @media screen and (max-width: 655px) {
-    transform: translateX(13px);
   }
 }
 
+.logo-wrap {
+}
+
 .logo-icon {
-  display: flex; /* 로고 아이콘을 수평 정렬하기 위해 flex 컨테이너로 설정합니다. */
+  display: flex; /* 로고 아이콘을 수평 정렬하기 위해 flex로 설정한다 */
   justify-content: space-between; /* 로고와 다른 요소 사이에 여백을 추가합니다. */
 
   margin-bottom: 17px; /* 로고 위쪽 마진을 추가하여 로고를 아래로 내립니다. */
@@ -37,24 +33,8 @@
 .text-wrap {
   vertical-align: top;
   display: flex;
-  flex-direction: column; /* 수직으로 배열하도록 설정합니다. */
-  align-items: center; /* 수직 정렬을 위해 중앙 정렬합니다. */
-  margin-left: 298px;
-  margin-right: 270px;
-  transform: translateX(-30px);
-
-  @media screen and (max-width: 1230px) {
-    margin-right: 15.625rem;
-  }
-
-  @media screen and (max-width: 1190px) {
-    margin-left: 11.25rem;
-    margin-right: 11.25rem;
-  }
-
-  @media screen and (max-width: 1000px) {
-    transform: translateX(20px);
-  }
+  flex-direction: column; /* 수직으로 배열하도록 설정한다 */
+  align-items: center; /* 수직 중앙 정렬한다 */
 }
 
 .up,
@@ -66,35 +46,33 @@
   letter-spacing: -0.3px;
   text-align: center;
   margin-right: 10px;
+  margin-bottom: 7px; /* 위 텍스트와 아래 텍스트 간의 간격을 조절한다*/
   white-space: nowrap;
-  margin-bottom: 7px; /* 각각의 엘리먼트 사이에 간격을 추가합니다. */
-
-  @media screen and (max-width: 1000px) {
-    display: none;
-  }
 }
 
 .footer-item {
   display: inline-block;
-  margin-right: 20px; /* 각 항목 사이 간격 조절 */
+  margin-right: 20px; /* 각 텍스트 사이에 간격을 조절한다 */
   white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
 }
 
 .social-wrap {
-  margin-top: 15px; /* 로고 위쪽 마진을 추가하여 로고를 아래로 내립니다. */
   display: flex; /* 로고 아이콘을 수평 정렬하기 위해 flex 컨테이너로 설정합니다. */
   justify-content: space-between; /* 로고와 다른 요소 사이에 여백을 추가합니다. */
+
+  margin-top: 15px; /* 로고 위쪽 마진을 추가하여 로고를 아래로 내립니다. */
   transform: translateX(-10px);
+
+  @media screen and (max-width: 650px) {
+    display: none;
+  }
 }
 
 .social-icon {
-  margin-bottom: 17px; /* 로고 위쪽 마진을 추가하여 로고를 아래로 내립니다. */
-  margin-right: 11px;
   display: flex; /* 로고 아이콘을 수평 정렬하기 위해 flex 컨테이너로 설정합니다. */
   justify-content: space-between; /* 로고와 다른 요소 사이에 여백을 추가합니다. */
-  font-size: 15px;
 
-  @media screen and (max-width: 1000px) {
-    transform: translateX(47px);
-  }
+  margin-bottom: 17px; /* 로고 위쪽 마진을 추가하여 로고를 아래로 내립니다. */
+  margin-right: 11px;
+  font-size: 15px;
 }
