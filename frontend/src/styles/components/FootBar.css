@@ -14,6 +14,10 @@
     transform: translateX(-50px);
   }
 
+  @media screen and (max-width: 1000px) {
+    transform: translateX(137px);
+  }
+
   @media screen and (max-width: 655px) {
     transform: translateX(13px);
   }
@@ -33,9 +37,10 @@
   align-items: center; /* 수직 정렬을 위해 중앙 정렬합니다. */
   margin-left: 298px;
   margin-right: 270px;
+  transform: translateX(-30px);
 
   @media screen and (max-width: 1230px) {
-    margin-right: 13.75rem;
+    margin-right: 15.625rem;
   }
 
   @media screen and (max-width: 1190px) {
@@ -60,7 +65,7 @@
   white-space: nowrap;
   margin-bottom: 7px; /* 각각의 엘리먼트 사이에 간격을 추가합니다. */
 
-  @media screen and (max-width: 655px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
 }
@@ -75,6 +80,7 @@
   margin-top: 15px; /* 로고 위쪽 마진을 추가하여 로고를 아래로 내립니다. */
   display: flex; /* 로고 아이콘을 수평 정렬하기 위해 flex 컨테이너로 설정합니다. */
   justify-content: space-between; /* 로고와 다른 요소 사이에 여백을 추가합니다. */
+  transform: translateX(-40px);
 }
 
 .social-icon {
@@ -84,7 +90,7 @@
   justify-content: space-between; /* 로고와 다른 요소 사이에 여백을 추가합니다. */
   font-size: 15px;
 
-  @media screen and (max-width: 655px) {
-    transform: translateX(7px);
+  @media screen and (max-width: 1000px) {
+    transform: translateX(47px);
   }
 }

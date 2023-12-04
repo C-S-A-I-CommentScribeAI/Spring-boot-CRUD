@@ -1,15 +1,15 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import parser from 'html-react-parser';
+import React, { useState } from 'react';
 import '../styles/pages/Infor.css';
 import Header from '../components/Header';
 import InforBar from '../components/InforBar';
 import SearchBar from '../components/SearchBar';
+import InforPosts from '../components/InforPosts';
+import InforPostination from '../components/InforPostination';
 import FootBar from '../components/FootBar';
 
 function InformationPage() {
-  const location = useLocation();
-  const { viewContent } = location.state || {};
+  const inforItemsPerPage = 5;
+  const [currentInforPage, setCurrentInforPage] = useState(1);
 
   const inforContent = [
     { id: 2, jaemok: '여기는', naeyong: '정보게시판' },
@@ -17,8 +17,22 @@ function InformationPage() {
     { id: 4, jaemok: '서울대학교', naeyong: '서울특별시 관악구 ' },
     { id: 5, jaemok: '우아한형제들', naeyong: '배달의 민족' },
     { id: 6, jaemok: '건국대학교', naeyong: '서울특별시 광진구' },
+    { id: 7, jaemok: '홍익대학교', naeyong: '서울특별시 마포구' },
+    { id: 8, jaemok: '호주의 수도', naeyong: '시드니' },
+    { id: 9, jaemok: '앱 프레임워크', naeyong: 'Flutter' },
+    { id: 10, jaemok: '한화이글스', naeyong: '내년에는 가을야구 가자' },
   ];
 
+  const inforIndexOfLastItem = currentInforPage * inforItemsPerPage;
+  const inforOfFirstItem = inforIndexOfLastItem - inforItemsPerPage;
+  const inforCurrentItems = inforContent.slice(
+    inforOfFirstItem,
+    inforIndexOfLastItem,
+  );
+
+  const paginate = (pageNumber) => {
+    setCurrentInforPage(pageNumber);
+  };
   return (
     <div>
       <div className="container">
@@ -26,45 +40,16 @@ function InformationPage() {
           <Header />
           <InforBar />
           <div className="related-board-wrap">
-            <p className="p">전체 {inforContent.length + 1}건</p>
+            <p className="p">전체 {inforContent.length + 3}건</p>
             <SearchBar />
           </div>
-
-          <div className="inforboard-wrap">
-            {viewContent && viewContent.length > 0 ? (
-              viewContent.map((content) => (
-                <div className="post" key={content.id}>
-                  <div className="row">
-                    <span className="number">{content.id}</span>
-                    <h2 className="title">
-                      {parser(content.title)}
-                      {/* content.title을 parser로 변환 */}
-                    </h2>
-                    <p className="content">
-                      {parser(content.content)}
-                      {/* content.content를 parser로 변환 */}
-                    </p>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="post">
-                <p>No content yet</p>
-              </div>
-            )}
-          </div>
-
-          <div className="inforboard-wrap">
-            {inforContent.map((naeyong) => (
-              <div className="post" key={naeyong.id}>
-                <div className="row">
-                  <span className="number">{naeyong.id}</span>
-                  <h2 className="title">{naeyong.jaemok}</h2>
-                  <p className="content">{naeyong.naeyong}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <InforPosts inforInfo={inforCurrentItems} />
+          <InforPostination
+            inforItemsPerPage={inforItemsPerPage}
+            inforTotalItems={inforContent.length}
+            paginate={paginate}
+            currentInforPage={currentInforPage}
+          />
           <FootBar />
         </div>
       </div>

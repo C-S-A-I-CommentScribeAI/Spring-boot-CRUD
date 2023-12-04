@@ -7,9 +7,9 @@ import notionLogo from '../assets/images/notionLogo.png';
 function FootBar() {
   return (
     <div>
-      <div className="container">
+      <div className="footbar-container">
         <div className="logo-wrap">
-          <img src={footBarLogo} alt="footBarLogo" className="logo-icon" />
+          <img src={logo} alt="logo" className="logo-icon" />
         </div>
         <div className="text-wrap">
           <div className="up">
