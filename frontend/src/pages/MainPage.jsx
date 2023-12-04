@@ -3,6 +3,8 @@ import '../styles/pages/Main.css';
 import Header from '../components/Header';
 import IntroduceBtn from '../components/IntroduceBtn';
 import TodoBtn from '../components/TodoBtn';
+import FreeBtn from '../components/FreeBtn';
+import FootBar from '../components/FootBar';
 
 function MainPage() {
   return (
@@ -13,7 +15,9 @@ function MainPage() {
           <div className="movetopage-wrap">
             <IntroduceBtn />
             <TodoBtn />
+            <FreeBtn />
           </div>
+          <FootBar />
         </div>
       </div>
     </div>

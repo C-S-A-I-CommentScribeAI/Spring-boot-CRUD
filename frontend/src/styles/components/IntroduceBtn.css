@@ -2,10 +2,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
   position: relative;
   max-width: 1440px;
   height: 220px;
   flex-shrink: 0;
+  margin-bottom: 22px;
 
   cursor: pointer;
   background: gray;
@@ -19,14 +21,14 @@
   display: none;
 }
 
-.text-wrap {
+.intro-textwrap {
   display: flex;
   flex-direction: column;
   position: absolute;
   height: auto;
 
   top: 20%;
-  left: -15%;
+  left: 4%;
 }
 
 .title1,

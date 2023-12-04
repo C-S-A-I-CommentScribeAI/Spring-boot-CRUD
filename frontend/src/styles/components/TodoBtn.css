@@ -7,6 +7,7 @@
   max-width: 1440px;
   height: 220px;
   flex-shrink: 0;
+  margin-bottom: 22px;
 
   cursor: pointer;
   background: rgb(5, 101, 5);

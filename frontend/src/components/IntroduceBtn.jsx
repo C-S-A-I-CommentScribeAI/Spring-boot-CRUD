@@ -25,7 +25,7 @@ function IntroduceBtn() {
         tabIndex="0"
         role="button"
       >
-        <div className="text-wrap">
+        <div className="intro-textwrap">
           <h className="title1">C.S.A.I의</h>
           <h className="title2">다양한 공부법을 만나보세요!</h>
         </div>
