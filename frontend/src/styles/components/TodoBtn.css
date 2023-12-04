@@ -1,0 +1,67 @@
+.todo-container {
+  display: flex;
+  justify-content: flex-end; /* 투투 이미지를 오른쪽 끝으로 */
+  align-items: center; /* 투두 이미지를 중앙으로 배치 */
+
+  position: relative;
+  max-width: 1440px;
+  height: 220px;
+  flex-shrink: 0;
+
+  cursor: pointer;
+  background: rgb(5, 101, 5);
+}
+
+.todo-container:hover {
+  background: #d7e4dd;
+}
+
+.todo-container:hover .todo-img {
+  /* todo-container에 hover했을 때 todo-img 사라지게 설정*/
+  display: none;
+}
+
+.todo-container:hover .jjangju1-img {
+  display: block; /* none에서 보일 때 사용 */
+  width: 204px;
+  height: 220px;
+
+  transform: translateX(-150px);
+}
+
+.todo-textwrap {
+  /* 이미지는 position으로 absoulute 되어있기 때문에 
+  justify-content와 align-items 적용이 안됨*/
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: auto;
+
+  top: 25%;
+  left: 4%;
+}
+
+.title3,
+.title4 {
+  width: 607px;
+  height: auto; /* 글자 크기에 맞게 조절 */
+
+  color: white;
+  font-family: DM Serif Display;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 125% */
+}
+
+.todo-img {
+  width: 180px;
+  height: 180px;
+
+  transform: translateX(-200px);
+}
+
+.jjangju1-img {
+  /* todo-container에 hover했을 때 todo-img 사라지게 설정*/
+  display: none;
+}
