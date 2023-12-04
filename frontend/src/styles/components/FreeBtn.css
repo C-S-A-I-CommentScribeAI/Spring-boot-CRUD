@@ -1,0 +1,63 @@
+.free-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  position: relative;
+  max-width: 1440px;
+  height: 220px;
+
+  cursor: pointer;
+  background: rgb(178, 0, 178);
+}
+
+.free-container:hover {
+  background: #e4d1ed;
+}
+
+.free-container:hover .board-img {
+  display: none;
+}
+
+.free-container:hover .jjangu2-img {
+  display: block;
+  opacity: 0.6;
+
+  width: 254px;
+  height: 260px;
+  transform: translateX(-120px);
+}
+
+.free-textwrap {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 25%;
+  left: 4%;
+}
+
+.title5,
+.title6 {
+  width: 607px;
+  height: auto; /* 글자 크기에 맞게 조절 */
+
+  color: white;
+  font-family: DM Serif Display;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 125% */
+}
+
+.board-img {
+  width: 227px;
+  height: 231px;
+  flex-shrink: 0;
+
+  transform: translateX(-150px);
+}
+
+.jjangu2-img {
+  display: none;
+}

@@ -21,11 +21,12 @@
   display: none;
 }
 
-.todo-container:hover .jjangju1-img {
+.todo-container:hover .jjangu1-img {
   display: block; /* none에서 보일 때 사용 */
   width: 204px;
   height: 220px;
 
+  opacity: 0.6;
   transform: translateX(-150px);
 }
 
@@ -58,10 +59,10 @@
   width: 180px;
   height: 180px;
 
-  transform: translateX(-200px);
+  transform: translateX(-150px);
 }
 
-.jjangju1-img {
+.jjangu1-img {
   /* todo-container에 hover했을 때 todo-img 사라지게 설정*/
   display: none;
 }

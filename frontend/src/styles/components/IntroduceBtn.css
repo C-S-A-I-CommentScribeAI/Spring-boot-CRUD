@@ -1,4 +1,7 @@
 .intro-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   position: relative;
   max-width: 1440px;
   height: 220px;
@@ -10,6 +13,10 @@
 
 .intro-container:hover {
   background: url('../../assets/images/introBackground.png');
+}
+
+.intro-container:hover .study-img {
+  display: none;
 }
 
 .text-wrap {
@@ -33,4 +40,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: 50px; /* 125% */
+}
+
+.study-img {
+  width: 180px;
+  height: 180px;
+
+  transform: translateX(-200px);
 }
