@@ -1,12 +1,17 @@
 import React from 'react';
-import FootBar from '../components/FootBar';
+import '../styles/pages/Main.css';
+import Header from '../components/Header';
+import IntroduceBtn from '../components/IntroduceBtn';
 
 function MainPage() {
   return (
     <div>
       <div className="container">
         <div className="main-wrap">
-          <FootBar />
+          <Header />
+          <div>
+            <IntroduceBtn />
+          </div>
         </div>
       </div>
     </div>

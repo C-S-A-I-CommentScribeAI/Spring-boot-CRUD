@@ -1,0 +1,10 @@
+.container {
+}
+
+.main-wrap {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  flex-shrink: 0;
+  align-items: center;
+}

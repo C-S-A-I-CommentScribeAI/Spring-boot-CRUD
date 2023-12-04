@@ -1,0 +1,35 @@
+.intro-container {
+  display: flex;
+  position: relative;
+  max-width: 1440px;
+  height: 220px;
+  flex-shrink: 0;
+
+  cursor: pointer;
+  background: gray;
+}
+
+.intro-container:hover {
+  background: url('../../assets/images/introBackground.png');
+}
+
+.text-wrap {
+  position: absolute;
+  height: auto;
+
+  top: 20%;
+  left: -15%;
+}
+
+.title1,
+.title2 {
+  width: 607px;
+  height: auto; /* 글자 크기에 맞게 조절 */
+
+  color: white;
+  font-family: DM Serif Display;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 125% */
+}
