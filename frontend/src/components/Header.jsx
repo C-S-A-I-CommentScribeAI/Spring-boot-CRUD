@@ -6,7 +6,7 @@ import set from '../assets/images/settings.png';
 function Header() {
   return (
     <div>
-      <div className="container">
+      <div className="header-container">
         <div className="logo-wrap">
           <img src={logo} alt="logo" className="logo-icon" />
         </div>
