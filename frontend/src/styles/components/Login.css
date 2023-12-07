@@ -1,33 +1,116 @@
 .login-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: center; /* 수직정렬이기 때문에 가로 중앙 정렬은 justify가 아닌 align을 사용*/
 
-  background-color: #ccc;
-  width: 1200px;
-  height: 768px;
-}
-
-.login-title {
-  width: 401px;
-  height: 57px;
-
-  color: #000;
-  text-align: center;
-
-  font-family: DM Serif Display;
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 48px; /* 137.143% */
-
-  border: 3px solid black;
-}
-
-.login-wrap {
-  background-color: #fff;
+  background-color: white;
   width: 893px;
   height: 504px;
   border-radius: 30px;
+
+  margin-top: 29px;
+}
+
+.login-subtitle {
+  width: 654px;
+  height: 31px;
+  color: #000;
+
+  font-family: DM Serif Display;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+
+  margin-top: 33px;
+}
+
+.field-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 16px; /* 상위(외부) 컴포넌트와 간격을 조절하기 위해 사용 */
+}
+
+.id-field,
+.pw-field {
+  width: 654px; /* 로그인 텍스트를 좌측 정렬하기 위해서 너비 설정*/
+  height: 57px;
+
+  background: #fff;
+  border-radius: 25px;
+  border-color: black;
+
+  padding: 10px 0px 0px 13px; /* placholder 간격 조절, 내부 컴포넌트의 간격을 조절하고 싶을 때 padding*/
+}
+
+.pw-field {
+  margin-top: 9px;
+  position: relative;
+}
+
+.id-field::placeholder,
+.pw-field::placeholder {
+  width: auto;
+  height: auto;
+
+  color: #a3a0a0;
+  font-family: DM Serif Display;
+  font-size: 21px;
+  font-style: normal;
+}
+
+.eye-button {
+  position: absolute;
+  top: 40.5%;
+  right: 31.5%;
+
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+
+.eye-icon {
+  width: 100%; /* eye-button 크기에 맞게 조절*/
+  height: 100%;
+}
+
+.extra-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  width: 40.875rem; /* 상위 컴포넌트가 값이 변하면 같은 비율로 조정 */
+  margin-top: 15px;
+}
+
+.saveid-cb {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.search-wrap {
+  display: flex;
+}
+
+.search-id {
+  color: #0e0e0e;
+  text-align: center;
+
+  font-family: DM Serif Display;
+  font-style: normal;
+
+  margin-right: 0.813rem;
+  cursor: pointer;
+}
+
+.search-pw {
+  color: #0e0e0e;
+  text-align: center;
+
+  font-family: DM Serif Display;
+  font-style: normal;
+
+  margin-left: 0.813rem;
+  cursor: pointer;
 }
