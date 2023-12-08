@@ -9,7 +9,7 @@ function FootBar() {
     <div>
       <div className="container">
         <div className="logo-wrap">
-          <img src={footBarLogo} alt="footBarLogo" className="logo-icon" />
+          <img src={logo} alt="footBarLogo" className="logo-icon" />
         </div>
         <div className="text-wrap">
           <div className="up">

@@ -1,5 +1,5 @@
 import React from 'react';
-import FootBar from '../component/FootBar';
+import FootBar from '../components/FootBar';
 
 function MainPage() {
   return (
