@@ -34,3 +34,12 @@
 
   margin-top: 58px;
 }
+
+.boundary {
+  width: 662px;
+  height: 1px;
+
+  background-color: white;
+  margin-top: 36px;
+  border: none;
+}
