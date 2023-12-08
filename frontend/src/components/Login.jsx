@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/components/Login.css';
 import EyeIcon from '../assets/images/eyeIcon.png';
+import SocialLogin from './SocialLogin';
 
 function Login() {
   const MAX_EMAIL_LENGTH = 20; // 최대 이메일 길이
@@ -48,11 +49,18 @@ function Login() {
             />
             아이디 저장
           </label>
+
           <div className="search-wrap">
             <p className="search-id">아이디 찾기</p>
             <p className="search-pw">비밀번호 찾기</p>
           </div>
         </div>
+
+        <button type="button" className="login-button">
+          로그인
+        </button>
+
+        <SocialLogin />
       </div>
     </div>
   );

@@ -1,0 +1,41 @@
+.social-login-wrap {
+  display: flex;
+  gap: 32px; /* naver와 kakao wrap 간격 32px로 설정*/
+  margin-top: 14px;
+}
+
+.naver-wrap,
+.kakao-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 115px;
+  height: 141px;
+
+  gap: 8px; /* naver-icon과 naver-content 간격 8px로 설정(column으로 정렬했기 때문에 위아래 간격 조정)*/
+}
+
+.naver-wrap {
+}
+
+.naver-icon {
+  width: 100%; /* 중앙으로 안되서 상위 컴포넌트 너비 크기에 딱 맞춰더니 가운데 정렬됨*/
+}
+
+.kakao-wrap {
+}
+
+.kakao-icon {
+  width: 100%; /* 중앙으로 안되서 상위 컴포넌트 너비 크기에 딱 맞춰더니 가운데 정렬됨*/
+}
+
+.naver-content,
+.kakao-content {
+  color: #0e0e0e;
+
+  text-align: center; /* 글씨 중앙으로 */
+  font-family: DM Serif Display;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px; /* 135% */
+}
