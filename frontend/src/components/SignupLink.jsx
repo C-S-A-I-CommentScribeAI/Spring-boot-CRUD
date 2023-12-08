@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/components/SignupLink.css';
 
 function SignupLink() {
@@ -10,7 +11,9 @@ function SignupLink() {
           <p className="st2">다양한 혜택</p>
           <p className="st1">확인하세요!</p>
         </div>
-        <p className="move-to-signup">회원가입</p>
+        <Link to="/signup" className="move-to-signup">
+          회원가입
+        </Link>
       </div>
     </div>
   );
